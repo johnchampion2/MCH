@@ -1,0 +1,38 @@
+{
+  "id": "./",
+  "name": "Magbenteh Community Hospital - MCH-BDTMS",
+  "short_name": "MCH-BDTMS",
+  "description": "Blood Donation and Transfusion Management System",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f5f7fa",
+  "theme_color": "#a31424",
+  "icons": [
+    {
+      "src": "assets/images/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/pwa-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/hospital-logo.png",
+      "sizes": "554x554",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

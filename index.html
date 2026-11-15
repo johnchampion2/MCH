@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#a31424">
+  <meta name="description" content="Magbenteh Community Hospital Blood Donation and Transfusion Management System">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MCH-BDTMS">
+  <title>MCH-BDTMS | Magbenteh Community Hospital</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/pwa-icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="config.js"></script>
+  <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+  <div id="splash" class="splash-screen" aria-label="Loading MCH-BDTMS">
+    <div class="splash-slides" aria-hidden="true"></div>
+    <div class="splash-shade"></div>
+    <div class="splash-content">
+      <img class="brand-logo" src="assets/images/hospital-logo.png" alt="Magbenteh Community Hospital logo">
+      <p class="eyebrow">MAGBENTEH COMMUNITY HOSPITAL</p>
+      <h1>Blood Donation &amp;<br>Transfusion Management</h1>
+      <p class="splash-acronym">MCH-BDTMS</p>
+      <div class="loading-track"><span></span></div>
+    </div>
+  </div>
+
+  <main id="auth" class="auth-screen hidden">
+    <div class="auth-background" aria-hidden="true"></div>
+    <div class="auth-shade"></div>
+    <section class="auth-brand">
+      <img class="brand-logo" src="assets/images/hospital-logo.png" alt="Magbenteh Community Hospital logo">
+      <p class="eyebrow">MAGBENTEH COMMUNITY HOSPITAL</p>
+      <h1>Every donation<br>can save a life.</h1>
+      <p>Blood Donation and Transfusion Management System</p>
+      <span class="brand-acronym">MCH-BDTMS</span>
+    </section>
+    <section class="auth-card" aria-live="polite">
+      <div class="connection-status is-checking" data-connection-status role="status" aria-live="polite">
+        <span class="connection-status-dot" aria-hidden="true"></span><span class="connection-status-text">Checking system...</span>
+      </div>
+      <div id="auth-message" class="notice hidden" role="status"></div>
+      <div id="login-panel">
+        <p class="eyebrow">WELCOME BACK</p>
+        <h2>Sign in to your account</h2>
+        <p class="muted">Manage donations, patients, and blood services.</p>
+        <form id="login-form" class="form-watermark">
+          <label>Username<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="30" required></label>
+          <label>Role<select name="role" required><option value="" selected disabled>Select your role</option><option value="Administrator">Administrator</option><option value="Lab Technician">Lab Technician</option></select></label>
+          <label>Password<span class="password-control"><input id="login-password" name="password" type="password" autocomplete="current-password" required><button class="password-toggle" type="button" data-password-toggle data-password-target="login-password" aria-label="Show password" aria-pressed="false" title="Show password"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="eye-shape" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"></path><circle class="eye-pupil" cx="12" cy="12" r="3"></circle><path class="eye-slash" d="m3 3 18 18"></path></svg></button></span></label>
+          <button class="button button-primary button-wide" type="submit">Sign in</button>
+        </form>
+        <p class="auth-switch">New to MCH-BDTMS? <button class="text-button" type="button" data-auth-mode="register">Create an account</button></p>
+      </div>
+      <div id="register-panel" class="hidden">
+        <p class="eyebrow">JOIN THE TEAM</p>
+        <h2>Create your account</h2>
+        <p class="muted" id="register-hint">The first account is set up as the Administrator.</p>
+        <form id="register-form" class="form-watermark">
+          <label>Full name<input name="fullName" autocomplete="name" required maxlength="100"></label>
+          <label>Username<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" minlength="3" maxlength="30" pattern="[A-Za-z0-9][A-Za-z0-9._-]{2,29}" title="Use 3 to 30 letters, numbers, dots, underscores, or hyphens." required></label>
+          <label>Email address<input name="email" type="email" autocomplete="email" required maxlength="150"></label>
+          <label>Phone number<input name="phone" type="tel" autocomplete="tel" maxlength="30"></label>
+          <label>Password<span class="password-control"><input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" required><button class="password-toggle" type="button" data-password-toggle data-password-target="register-password" aria-label="Show password" aria-pressed="false" title="Show password"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="eye-shape" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"></path><circle class="eye-pupil" cx="12" cy="12" r="3"></circle><path class="eye-slash" d="m3 3 18 18"></path></svg></button></span></label>
+          <label>Confirm password<span class="password-control"><input id="register-confirm-password" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" required><button class="password-toggle" type="button" data-password-toggle data-password-target="register-confirm-password" aria-label="Show password" aria-pressed="false" title="Show password"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="eye-shape" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"></path><circle class="eye-pupil" cx="12" cy="12" r="3"></circle><path class="eye-slash" d="m3 3 18 18"></path></svg></button></span></label>
+          <button class="button button-primary button-wide" type="submit">Create account</button>
+        </form>
+        <p class="auth-switch">Already registered? <button class="text-button" type="button" data-auth-mode="login">Sign in</button></p>
+      </div>
+      <div id="install-app-panel" class="install-app-panel hidden">
+        <button id="install-app-button" class="button button-secondary button-wide" type="button">Install MCH-BDTMS</button>
+        <p id="install-app-help" class="install-app-help">Install this app on your phone, tablet, or computer for quick access.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="app-shell" class="app-shell hidden">
+    <div id="app-background" class="app-background" aria-hidden="true"></div>
+    <aside id="sidebar" class="sidebar">
+      <a class="sidebar-brand" href="#" data-page="home">
+        <img src="assets/images/hospital-logo.png" alt="">
+        <span><strong>Magbenteh</strong><small>Community Hospital</small></span>
+      </a>
+      <div class="sidebar-section-label">WORKSPACE</div>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-page="home"><span class="nav-icon">⌂</span>Home</button>
+        <button class="nav-item" data-page="low-stock"><span class="nav-icon">⚠</span>Low stock<span id="low-stock-nav-count" class="nav-badge hidden" aria-live="polite"></span></button>
+        <button class="nav-item" data-page="donors"><span class="nav-icon">♡</span>Donors</button>
+        <button class="nav-item" data-page="patients"><span class="nav-icon">✚</span>Patients</button>
+        <button class="nav-item" data-page="reports"><span class="nav-icon">▤</span>Reports</button>
+        <button class="nav-item" data-page="recycle"><span class="nav-icon">↻</span>Recycle bin</button>
+        <button class="nav-item admin-only hidden" data-page="admin"><span class="nav-icon">⚙</span>Admin control panel</button>
+        <button class="nav-item" data-page="profile"><span class="nav-icon">◉</span>Profile</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-help"><span>♥</span><strong>Give blood.<br>Give hope.</strong><small>Supporting our community, together.</small></div>
+        <button id="logout-button" class="nav-item logout-item"><span class="nav-icon">↪</span>Log out</button>
+      </div>
+    </aside>
+
+    <section class="main-area">
+      <header class="topbar">
+        <button id="menu-button" class="icon-button mobile-menu" type="button" aria-label="Open menu">☰</button>
+        <div class="topbar-heading"><span class="eyebrow">MCH-BDTMS</span><strong id="page-title">Home</strong></div>
+        <div class="connection-status is-checking" data-connection-status role="status" aria-live="polite">
+          <span class="connection-status-dot" aria-hidden="true"></span><span class="connection-status-text">Checking system...</span>
+        </div>
+        <button id="quick-add-patient" class="button button-primary quick-patient-button hidden" type="button" data-action="add-patient">＋ Add patient</button>
+        <div class="topbar-user">
+          <div class="user-copy"><strong id="top-user-name"></strong><small id="top-user-role"></small></div>
+          <button class="avatar-button" type="button" data-page="profile" aria-label="Open profile"><img id="top-user-photo" src="assets/images/avatar-placeholder.svg" alt=""></button>
+        </div>
+      </header>
+      <main id="page-content" class="page-content"></main>
+      <footer class="app-footer">Magbenteh Community Hospital <span>•</span> Blood Donation &amp; Transfusion Management</footer>
+    </section>
+  </div>
+
+  <dialog id="record-dialog" class="record-dialog">
+    <form method="dialog" class="dialog-close-row"><button class="icon-button" aria-label="Close">×</button></form>
+    <div id="dialog-content"></div>
+  </dialog>
+  <dialog id="success-dialog" class="success-dialog" aria-labelledby="success-title" aria-describedby="success-message">
+    <div class="success-dialog-icon" aria-hidden="true">✓</div>
+    <h2 id="success-title">Completed</h2>
+    <p id="success-message"></p>
+    <form method="dialog"><button class="button button-primary button-wide">Continue</button></form>
+  </dialog>
+  <dialog id="error-dialog" class="error-dialog" aria-labelledby="error-title" aria-describedby="error-message">
+    <div class="error-dialog-icon" aria-hidden="true">!</div>
+    <h2 id="error-title">Unable to complete</h2>
+    <p id="error-message" role="alert"></p>
+    <form method="dialog"><button class="button button-danger button-wide">Return to form</button></form>
+  </dialog>
+  <dialog id="confirm-dialog" class="confirm-dialog" aria-labelledby="confirm-title" aria-describedby="confirm-message">
+    <div class="confirm-dialog-icon" aria-hidden="true">!</div>
+    <h2 id="confirm-title">Confirm action</h2>
+    <p id="confirm-message"></p>
+    <div class="dialog-actions">
+      <button id="confirm-cancel" type="button" class="button button-secondary">Cancel</button>
+      <button id="confirm-accept" type="button" class="button button-danger">Confirm</button>
+    </div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
